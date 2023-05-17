@@ -1,6 +1,26 @@
 # Examples of GraphQL queries and mutations
 
+- [Faculty queries](#faculty_queries)
+    - [Get a list of Faculties](#get_list_of_faculties)
+    - [Get a list of Faculties (with limit and offset)](#get_list_of_faculties_with_limit_and_offset)
+    - [Get Faculty by ID](#get_faculty_by_id)
+    - [Create Faculty](#create_faculty)
+    - [Update Faculty](#update_faculty)
+    - [Delete Faculty](#delete_faculty)
+- [Department queries](#department_queries)
+    - [Get a list of Departments](#get_list_of_departments)
+    - [Get a list of Departments (with limit and offset)](#get_list_of_departments_with_limit_and_offset)
+    - [Get Department by ID](#get_department_by_id)
+    - [Create Department](#create_department)
+    - [Update Department](#update_department)
+    - [Delete Department](#delete_department)
+
+
+<a id="faculty_queries" />
+
 ## Faculties
+
+<a id="get_list_of_faculties" />
 
 ### Get a list of Faculties
 
@@ -28,12 +48,15 @@ query FacultyConnection {
       }
       pageInfo {
         total
+        nextPageOffset
         hasNextPage
       }
     }
   }
 }
 ```
+
+<a id="get_list_of_faculties_with_limit_and_offset" />
 
 ### Get a list of Faculties (with limit and offset)
 
@@ -61,6 +84,7 @@ query FacultyConnection($limit: Int!, $offset: Int) {
       }
       pageInfo {
         total
+        nextPageOffset
         hasNextPage
       }
     }
@@ -75,6 +99,8 @@ query FacultyConnection($limit: Int!, $offset: Int) {
   "offset": 20
 }
 ```
+
+<a id="get_faculty_by_id" />
 
 ### Get Faculty by ID
 
@@ -109,6 +135,8 @@ query Faculty($id: ID!) {
   "id": "13"
 }
 ```
+
+<a id="create_faculty" />
 
 ### Create Faculty
 
@@ -147,6 +175,8 @@ mutation CreateFaculty($faculty: FacultyInputPayload!) {
 }
 ```
 
+<a id="update_faculty" />
+
 ### Update Faculty
 
 #### Query:
@@ -176,6 +206,8 @@ mutation UpdateFaculty($id: ID!, $faculty: FacultyInputPayload!) {
 }
 ```
 
+<a id="delete_faculty" />
+
 ### Delete Faculty
 
 #### Query:
@@ -197,7 +229,11 @@ mutation DeleteFaculty($id: ID!) {
 }
 ```
 
+<a id="department_queries" />
+
 ## Departments
+
+<a id="get_list_of_departments" />
 
 ### Get a list of Departments
 
@@ -225,12 +261,15 @@ query DepartmentConnection {
       }
       pageInfo {
         total
+        nextPageOffset
         hasNextPage
       }
     }
   }
 }
 ```
+
+<a id="get_list_of_departments_with_limit_and_offset" />
 
 ### Get a list of Departments (with limit and offset)
 
@@ -258,6 +297,7 @@ query DepartmentConnection($limit: Int!, $offset: Int!) {
       }
       pageInfo {
         total
+        nextPageOffset
         hasNextPage
       }
     }
@@ -272,6 +312,8 @@ query DepartmentConnection($limit: Int!, $offset: Int!) {
   "offset": 20
 }
 ```
+
+<a id="get_department_by_id" />
 
 ### Get Department by ID
 
@@ -306,6 +348,8 @@ query Department($id: ID!) {
   "id": 21
 }
 ```
+
+<a id="create_department" />
 
 ### Create Department
 
@@ -351,6 +395,8 @@ mutation CreateDepartment($department: DepartmentInputPayload!) {
 }
 ```
 
+<a id="update_department" />
+
 ### Update Department
 
 #### Query:
@@ -378,6 +424,8 @@ mutation UpdateDepartment($id: ID!, $department: DepartmentInputPayload!) {
   }
 }
 ```
+
+<a id="delete_department" />
 
 ### Delete Department
 

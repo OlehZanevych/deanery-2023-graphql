@@ -3,6 +3,7 @@ package org.lnu.teaching.web.application.disign.deanery.graphql.entity.departmen
 import lombok.Data;
 import org.lnu.teaching.web.application.disign.deanery.graphql.entity.faculty.Faculty;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class Department {
 
     private Long facultyId;
 
+    @Transient
     private Faculty faculty;
 
     private String email;
